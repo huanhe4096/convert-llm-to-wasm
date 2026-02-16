@@ -131,3 +131,22 @@ Build an online text embedding demo with the following requirements:
 9. Use a two-column UI: left panel for controls/progress, right panel for point cloud.
 10. Return changed file list and run bun run build for verification.
 ```
+
+## Deploy To GitHub Pages (Bun + Vite)
+
+This project is configured for GitHub Pages deployment under a repo subpath:
+
+- Expected URL format: `https://<user>.github.io/<repo>/`
+- The build `base` is set from `BASE_PATH` (the workflow sets it automatically to `/<repo>/`).
+
+### One-time GitHub setup
+
+1. In your GitHub repo, go to `Settings -> Pages`.
+2. Set `Source` to `GitHub Actions`.
+
+### Deploy
+
+Push to `main` and GitHub Actions will build and deploy automatically using:
+
+- Workflow: `/Users/hh667/workspace/convert-llm-to-wasm/.github/workflows/deploy.yml`
+- Base path during CI build: `/${GITHUB_REPOSITORY#*/}/`
